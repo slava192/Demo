@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://abbyy.com/AnalysisService" elementFormDefault="qualified" targetNamespace="http://abbyy.com/AnalysisService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8002/AnalysisService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Languages">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LanguagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LanguagesResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="languages" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ComprenoErrorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="tns:ComprenoErrorCode" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComprenoErrorInfo" nillable="true" type="tns:ComprenoErrorInfo" />
+  <xs:simpleType name="ComprenoErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="ServiceIsUnavailable" />
+      <xs:enumeration value="TaskError" />
+      <xs:enumeration value="InvalidArgs" />
+      <xs:enumeration value="FileError" />
+      <xs:enumeration value="LicenseUnavailable" />
+      <xs:enumeration value="AuthorizationFailed" />
+      <xs:enumeration value="UnknownError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ComprenoErrorCode" nillable="true" type="tns:ComprenoErrorCode" />
+  <xs:element name="MarkupLanguages">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarkupLanguagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarkupLanguagesResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="languages" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XmlParameters">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XmlParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XmlParametersResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="xmlParameters" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Extensions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtensionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExtensionsResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="extensions" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAuthorizationNecessary">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAuthorizationNecessaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAuthorizationNecessaryResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element minOccurs="0" name="authorizationNecessary" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="credentials" nillable="true" type="tns:UserCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCustomUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserCredentials" nillable="true" type="tns:UserCredentials" />
+  <xs:element name="CreateTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTaskResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timeout" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessTaskResult" nillable="true" type="tns:ComprenoErrorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcessingTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcessingTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelProcessingTaskResult" nillable="true" type="tns:ComprenoErrorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTaskResult" nillable="true" type="tns:ComprenoErrorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTaskSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="tns:FileContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FileContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contents" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileContainer" nillable="true" type="tns:FileContainer" />
+  <xs:element name="SetTaskSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetTaskSourceResult" nillable="true" type="tns:ComprenoErrorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTaskParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sourceLanguage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="markupLanguage" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="xmlParameters" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTaskParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetTaskParamsResult" nillable="true" type="tns:ComprenoErrorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskStateResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element minOccurs="0" name="taskState" type="tns:TaskState" />
+        <xs:element minOccurs="0" name="percent" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="TaskState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotLoaded" />
+      <xs:enumeration value="NotProcessed" />
+      <xs:enumeration value="InQueue" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="ProcessingFailed" />
+      <xs:enumeration value="ProcessingSuccessfull" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskState" nillable="true" type="tns:TaskState" />
+  <xs:element name="GetTaskResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskResultResult" nillable="true" type="tns:ComprenoErrorInfo" />
+        <xs:element minOccurs="0" name="result" nillable="true" type="tns:FileContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

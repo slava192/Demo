@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://abbyy.com/AnalysisService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://abbyy.com/AnalysisService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://abbyy.com/AnalysisService/Imports">
+      <xsd:import schemaLocation="http://localhost:8002/AnalysisService.svc?xsd=xsd0" namespace="http://abbyy.com/AnalysisService" />
+      <xsd:import schemaLocation="http://localhost:8002/AnalysisService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8002/AnalysisService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAnalysisService_Languages_InputMessage">
+    <wsdl:part name="parameters" element="tns:Languages" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_Languages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_MarkupLanguages_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkupLanguages" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_MarkupLanguages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkupLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_XmlParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:XmlParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_XmlParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XmlParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_Extensions_InputMessage">
+    <wsdl:part name="parameters" element="tns:Extensions" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_Extensions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExtensionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_IsAuthorizationNecessary_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAuthorizationNecessary" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_IsAuthorizationNecessary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAuthorizationNecessaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_CreateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTask" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_CreateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_ProcessTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTask" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_ProcessTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_CancelProcessingTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelProcessingTask" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_CancelProcessingTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelProcessingTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_DeleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_DeleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_SetTaskSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTaskSource" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_SetTaskSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTaskSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_SetTaskParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTaskParams" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_SetTaskParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTaskParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_GetTaskState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskState" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_GetTaskState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_GetTaskResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskResult" />
+  </wsdl:message>
+  <wsdl:message name="IAnalysisService_GetTaskResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAnalysisService">
+    <wsdl:operation name="Languages">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/Languages" message="tns:IAnalysisService_Languages_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/LanguagesResponse" message="tns:IAnalysisService_Languages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkupLanguages">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/MarkupLanguages" message="tns:IAnalysisService_MarkupLanguages_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/MarkupLanguagesResponse" message="tns:IAnalysisService_MarkupLanguages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XmlParameters">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/XmlParameters" message="tns:IAnalysisService_XmlParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/XmlParametersResponse" message="tns:IAnalysisService_XmlParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Extensions">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/Extensions" message="tns:IAnalysisService_Extensions_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/ExtensionsResponse" message="tns:IAnalysisService_Extensions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthorizationNecessary">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/IsAuthorizationNecessary" message="tns:IAnalysisService_IsAuthorizationNecessary_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/IsAuthorizationNecessaryResponse" message="tns:IAnalysisService_IsAuthorizationNecessary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/CreateTask" message="tns:IAnalysisService_CreateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/CreateTaskResponse" message="tns:IAnalysisService_CreateTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTask">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/ProcessTask" message="tns:IAnalysisService_ProcessTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/ProcessTaskResponse" message="tns:IAnalysisService_ProcessTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelProcessingTask">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/CancelProcessingTask" message="tns:IAnalysisService_CancelProcessingTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/CancelProcessingTaskResponse" message="tns:IAnalysisService_CancelProcessingTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/DeleteTask" message="tns:IAnalysisService_DeleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/DeleteTaskResponse" message="tns:IAnalysisService_DeleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTaskSource">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/SetTaskSource" message="tns:IAnalysisService_SetTaskSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/SetTaskSourceResponse" message="tns:IAnalysisService_SetTaskSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTaskParams">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/SetTaskParams" message="tns:IAnalysisService_SetTaskParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/SetTaskParamsResponse" message="tns:IAnalysisService_SetTaskParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskState">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/GetTaskState" message="tns:IAnalysisService_GetTaskState_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/GetTaskStateResponse" message="tns:IAnalysisService_GetTaskState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskResult">
+      <wsdl:input wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/GetTaskResult" message="tns:IAnalysisService_GetTaskResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://abbyy.com/AnalysisService/IAnalysisService/GetTaskResultResponse" message="tns:IAnalysisService_GetTaskResult_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
